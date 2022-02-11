@@ -3,22 +3,272 @@
 *::after {
   box-sizing: inherit;
 }
-.app-container {
-  width: 1160px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.app-header {
-  margin-top: 25px;
-  text-align: center;
-  height: 100%;
-}
+
 .search-input {
   font-size: 16px;
   font-weight: 300;
   padding: 5px 10px;
   outline: none;
   border: none;
-  width: 33%;
+  background-color: transparent;
+  margin-bottom: 15px;
+
   border-bottom: 2px solid DarkRed;
+}
+
+.logo {
+  display: block;
+}
+
+.select-language {
+  padding-left: 40px;
+}
+
+.search-button {
+  padding: 5px 10px;
+}
+
+.link {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.user-information {
+  margin-bottom: 15px;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Настройки текста */
+  font-family: system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  color: black;
+
+  background-color: aliceblue;
+}
+
+.container {
+  width: 100%;
+  /* 720 это приблизитильная ширина планшета */
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Адаптивная шапка */
+.app-header {
+  position: relative;
+  width: 100%;
+  padding: 16px 0;
+  background-color: black;
+  color: beige;
+}
+
+/* Меняем базовые настройки текста на ПК */
+
+.connection-links-toggler {
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  color: white;
+  background-color: transparent;
+  background-image: url("./img/burger.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* Скрываем меню по умолчанию*/
+.navigation-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  padding-top: 16px;
+  padding-bottom: 25px;
+  width: 100%;
+  background-color: gray;
+}
+
+.connection-link {
+  display: block;
+  padding: 15px;
+  color: aquamarine;
+}
+
+.navigation-menu-open {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .connection-links-toggler {
+    display: none;
+  }
+  /* Меню возвращаем с помощью CSS в исходное положение */
+  .navigation-menu {
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .header-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .connection-link {
+    text-align: center;
+    padding: 16px;
+  }
+
+  .search-input {
+    width: 75%;
+  }
+
+  .user-list-container {
+    width: 55%;
+  }
+
+  .aside-content {
+    width: 35%;
+  }
+  .two-columns-container {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user-information {
+    display: flex;
+    align-items: flex-end;
+  }
+  .user-data {
+    padding-left: 25px;
+  }
+  .pagination-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+main {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-top: 64px;
+    padding-bottom: 50px;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.aside-content {
+  background-color: bisque;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Navigation Container */
+
+.navigation-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Footer */
+
+.page-footer {
+  background-color: burlywood;
+  padding: 25px;
+}
+
+/* Repos Page */
+
+.repos-style {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.repos-list {
+  list-style: none;
+}
+
+/* Paginator */
+
+.paginator {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  color: blue;
+}
+
+.paginator li {
+  margin-right: 5px;
+}
+
+.previous {
+  margin-right: 15px;
+}
+
+.next {
+  margin-left: 10px;
 }
