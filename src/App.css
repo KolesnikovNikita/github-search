@@ -1,3 +1,6 @@
+html {
+  box-sizing: border-box;
+}
 *,
 *::before,
 *::after {
@@ -128,6 +131,11 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .container {
+    /* min-width - нужно взять из макета для ПК, 
+    это максимальное горизонтальное расстояние  между 2 точками */
+    max-width: 992px;
+  }
   .connection-links-toggler {
     display: none;
   }
